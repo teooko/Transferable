@@ -162,9 +162,6 @@ while cond:
     item = addItems(com, count)
               
     printItems(item)
-
-
-
   
   if cond == 2:
     print("choose folder: ")
@@ -183,7 +180,7 @@ while cond:
     print("choose file: ")
     file = int(input())
     fspath = path + "/" + item[file].name
-    fcpath = "C:/Users/teobo/Desktop/test" + "/" + item[file].name
+    fcpath = "C:/Users/Teo/Desktop/test" + "/" + item[file].name
     sftp_client.get(fspath,fcpath)
     
   if cond == 4:
@@ -192,14 +189,14 @@ while cond:
     print("choose file: ")
     file = int(input())
     fspath = path + "/" + item[file].name
-    fcpath = "C:/Users/teobo/Desktop/test" + "/" + item[file].name
+    fcpath = "C:/Users/Teo/Desktop/test" + "/" + item[file].name
     sftp_client.put(fcpath,fspath)
 
   if cond == 5:
     print("choose folder: ")
     folder = int(input())
     fspath = path + "/" + item[folder].name
-    fcpath = "C:/Users/teobo/Desktop/test" + "/" + item[folder].name
+    fcpath = "C:/Users/Teo/Desktop/test" + "/" + item[folder].name
     subprocess.Popen('powershell.exe New-Item -Path \'' + fcpath + '\' -ItemType Directory')
     downFolder(fcpath, fspath)
 
@@ -210,7 +207,7 @@ while cond:
     print("choose folder: ")
     folder = int(input())
     fspath = path + "/" + item[folder].name
-    fcpath = "C:/Users/teobo/Desktop/test" + "/" + item[folder].name
+    fcpath = "C:/Users/Teo/Desktop/test" + "/" + item[folder].name
     stdin, stdout, stderr = ssh_client.exec_command('powershell -command "New-Item -Path \'' + fspath + '\' -ItemType Directory"')
     stdin.close()
     stdout.close()
