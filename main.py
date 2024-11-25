@@ -184,8 +184,6 @@ while cond:
     sftp_client.get(fspath,fcpath)
     
   if cond == 4:
-    #UPDATE
-
     print("choose file: ")
     file = int(input())
     fspath = path + "/" + item[file].name
@@ -201,8 +199,6 @@ while cond:
     downFolder(fcpath, fspath)
 
   if cond == 6:
-
-    #UPDATE
 
     print("choose folder: ")
     folder = int(input())
