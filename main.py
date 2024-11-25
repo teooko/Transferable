@@ -1,12 +1,20 @@
 import paramiko
 import subprocess
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+HOSTNAME = os.getenv('HOSTNAME')
+USERNAME = os.getenv('USERNAME')
+PASSWORD = os.getenv('PASSWORD')
+
 ssh_client = paramiko.SSHClient()
 ssh_client.load_host_keys('hostkeys.txt')
-#ssh_client.load_host_keys('C:/Users/teobo/Desktop/proiect/remote/test2/hostkeys.txt')
+
 #ssh_client.set_missing_host_key_policy(paramiko.RejectPolicy())
 ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-#ssh_client.load_host_keys('C:/Users/teobo/Desktop/proiect/remote/test2/hostkeys.txt')
-ssh_client.connect(hostname='127.0.0.1', username='teo',password='4156',port=22)
+
+ssh_client.connect(hostname=HOSTNAME, username=USERNAME,password=PASSWORD,port=22)
 sftp_client=ssh_client.open_sftp()
 
 class Item:
