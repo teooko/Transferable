@@ -1,6 +1,6 @@
 # Transferable
 
-This is a tool used to navigate a local pc, and upload/download files from it.
+This is a tool used to navigate a pc from a local network, and upload/download files from it.
 
 # How to use
 
